@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const PaintingCategory = ({category, removeCategory}) => {
     return <li>
-        <a href="#" data-id={category.id}>{category.name}</a>
+        <a href="/#" data-id={category.id}>{category.name}</a>
         <button onClick={() => removeCategory(category.id) }>Remove</button>
     </li>;
 };

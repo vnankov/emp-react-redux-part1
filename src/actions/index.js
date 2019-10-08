@@ -59,3 +59,18 @@ export const removeFurnitureCategory = categoryId => {
         }
     }
 };
+
+/**
+ * Add new custom category.
+ * 
+ * @param { name: string } name
+ * @returns {{type, payload: {name: {}}}}
+ */
+export const addNewCustomCategory = name => {
+    return {
+        type: categoryConst.ADD_CUSTOM_CATEGORY,
+        payload: {
+            name
+        }
+    }
+}

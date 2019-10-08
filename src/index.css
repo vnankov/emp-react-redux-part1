@@ -23,7 +23,7 @@ li {
 
 li a {
   display: inline-block;
-  width: 150px;
+  min-width: 150px;
   font-size: 20px;
 }
 
