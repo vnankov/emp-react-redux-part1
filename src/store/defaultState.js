@@ -17,8 +17,7 @@ const defaultState = {
         {id: 2, name: 'bottle'},
     ],
     customCategoriesList: [
-        {id:1, name:'custom stuff'},
-        {id:2, name:'custom peases of stuff'}
+
     ]
 };
 

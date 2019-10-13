@@ -3,16 +3,13 @@ import PropTypes from 'prop-types';
 
 const CustomCategory = ({category}) => {
     return <li>
-        <a href="/#">{category.name}</a>
+        <a href="/#">{category}</a>
         {/* <button onClick={() => removeCategory(category.id) }>Remove</button> */}
     </li>;
 };
 
 CustomCategory.propTypes = {
-    category: PropTypes.shape({
-        // id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-        name: PropTypes.string
-    }),
+    category: PropTypes.string,
     removeCategory: PropTypes.func
 };
 

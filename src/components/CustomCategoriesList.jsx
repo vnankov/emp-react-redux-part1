@@ -20,12 +20,14 @@ const CustomCategoriesList = ({customCategories, addCategory, removeCategory}) =
     // };
 
     // const removeExistingCategory = categoryId => removeCategory(categoryId);
+    console.log(customCategories)
     return <React.Fragment>
         <ul>
             {
                 customCategories.map((category, index) =>
                     <CustomCategory key={index}
-                                      category={category}
+                                    category={category}
+                                    id={index}
                     />
 
                 )
