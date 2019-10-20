@@ -74,3 +74,18 @@ export const addNewCustomCategory = name => {
         }
     }
 }
+
+/**
+ * Remove custom category by given id.
+ * 
+ * @param { number } categoryId
+ * @returns {{type, payload: {categoryId: number}}}
+ */
+export const removeCustomCategory = categoryId => {
+    return {
+        type: categoryConst.REMOVE_CUSTOM_CATEGORY,
+        payload: {
+            categoryId
+        }
+    }
+};

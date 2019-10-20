@@ -1,5 +1,5 @@
 import {
-    ADD_CUSTOM_CATEGORY
+    ADD_CUSTOM_CATEGORY, REMOVE_CUSTOM_CATEGORY
 } from '../constants/actionTypes';
 
 const customCategoriesList = (state = [], action) => {
@@ -9,6 +9,8 @@ const customCategoriesList = (state = [], action) => {
                 ...state,
                 action.payload.name
             ];
+        case REMOVE_CUSTOM_CATEGORY:
+            return state.filter((category, index) => category.id !== action.payload.categoryId);
         default:
             return state;
     }

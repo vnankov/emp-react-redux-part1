@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import InputField from './InputField';
 import CustomCategory from './customCategory';
+import { removeCustomCategory } from '../actions';
 
-// import { addNewFurnitureCategory, removeFurnitureCategory } from '../actions';
 
-const CustomCategoriesList = ({customCategories, addCategory, removeCategory}) => {
+const CustomCategoriesList = ({customCategories, removeCategory}) => {
     // const addNewCategory = () => {
     //     const dummyCategories = ['chair', 'table', 'puzzle', 'mobile', 'teddy bear', 'block', 'baby doll', 'keyboard'];
     //     const rand = dummyCategories[Math.floor(Math.random() * dummyCategories.length)];
@@ -19,8 +19,6 @@ const CustomCategoriesList = ({customCategories, addCategory, removeCategory}) =
     //     addCategory(newCategory);
     // };
 
-    // const removeExistingCategory = categoryId => removeCategory(categoryId);
-    console.log(customCategories)
     return <React.Fragment>
         <ul>
             {
@@ -28,13 +26,13 @@ const CustomCategoriesList = ({customCategories, addCategory, removeCategory}) =
                     <CustomCategory key={index}
                                     category={category}
                                     id={index}
+                                    removeCategory={removeCategory}
                     />
 
                 )
             }
         </ul>
         <InputField />
-        {/* <button className="add-btn" onClick={addNewCategory}>Add category</button> */}
     </React.Fragment>;
 };
 
@@ -44,7 +42,6 @@ CustomCategoriesList.defaultProps = {
 
 CustomCategoriesList.propTypes = {
     customCategories: PropTypes.array,
-    addCategory: PropTypes.func,
     removeCategory: PropTypes.func
 };
 
@@ -54,11 +51,10 @@ const mapStateToProps = (state) => {
     }
 };
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         addCategory: category => dispatch(addNewFurnitureCategory(category)),
-//         removeCategory: categoryId => dispatch(removeFurnitureCategory(categoryId))
-//     }
-// };
+const mapDispatchToProps = dispatch => {
+    return {
+        removeCategory: categoryId => dispatch(removeCustomCategory(categoryId))
+    }
+};
 
-export default connect(mapStateToProps, null)(CustomCategoriesList);
+export default connect(mapStateToProps, mapDispatchToProps)(CustomCategoriesList);
